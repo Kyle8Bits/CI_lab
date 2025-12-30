@@ -32,8 +32,11 @@ jobs:
           distribution: "temurin"
           cache: maven
 
-      - name: Build and test (Maven Wrapper)
-        run: ./mvnw clean test
+      - name: Build and test (todo-app)
+        run: |
+          cd todo-app
+          mvn clean test
+
 
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@v1
