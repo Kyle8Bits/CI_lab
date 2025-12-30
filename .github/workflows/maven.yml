@@ -33,9 +33,7 @@ jobs:
           cache: maven
 
       - name: Build and test (todo-app)
-        run: |
-          cd todo-app
-          mvn clean test
+        run: mvn clean test
 
 
       - name: Update dependency graph
