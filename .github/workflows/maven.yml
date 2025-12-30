@@ -35,6 +35,3 @@ jobs:
       - name: Build and test (todo-app)
         run: mvn clean test
 
-
-      - name: Update dependency graph
-        uses: advanced-security/maven-dependency-submission-action@v1
