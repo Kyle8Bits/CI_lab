@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: todo
+
+  mongodb:
+    uri: mongodb+srv://todo-user:strongpassword@todo-cluster.lwaas1n.mongodb.net/todo_app?retryWrites=true&w=majority
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+  jwe:
+    secret: kyle-is-famous-steam-game
+    access-token-expiration: 900000
+    refresh-token-expiration: 604800000

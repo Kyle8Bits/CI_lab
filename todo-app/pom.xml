@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.kyle.template</groupId>
+        <artifactId>todo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>todo-app</artifactId>
+    <name>Todo Application</name>
+    <description>Spring Boot application with REST controllers</description>
+
+    <dependencies>
+
+        <!--
+            PUBLIC API - Controllers can import from here
+            Contains: External DTOs, External interfaces
+        -->
+        <dependency>
+            <groupId>com.kyle.template</groupId>
+            <artifactId>todo-api</artifactId>
+        </dependency>
+
+        <!--
+            INTERNAL IMPLEMENTATION - Controllers CANNOT import from here!
+            scope=runtime means compile-time invisible, runtime-only available
+            Contains: Internal DTOs, Service implementations, Entities, Config
+        -->
+        <dependency>
+            <groupId>com.kyle.template</groupId>
+            <artifactId>todo-core</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
